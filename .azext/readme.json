@@ -1,0 +1,10 @@
+{
+  "partials": {
+    "single-file": {
+      "file": "../src/git-guard-changes/docs/examples/single-file.yml"
+    },
+    "all-files": {
+      "file": "../src/git-guard-changes/docs/examples/all-files.yml"
+    }
+  }
+}

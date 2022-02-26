@@ -1,0 +1,9 @@
+steps:
+  - task: GitGuardChanges@0
+    displayName: 'Verify changelog'
+    inputs:
+      sourceCommitHash: 'tag:*-dev'
+      targetCommitHash: 'HEAD'
+      matchPattern: 'docs/CHANGELOG.md'
+      matchStrategy: 'single'
+      breakOnFailure: true

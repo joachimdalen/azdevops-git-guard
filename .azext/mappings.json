@@ -1,0 +1,5 @@
+{
+  "tasks": {
+    "git-guard-changes": "../src/git-guard-changes/task.json"
+  }
+}

@@ -1,0 +1,76 @@
+[
+  {
+    "publishDate": "2022-01-XX",
+    "version": "1.0.0",
+    "modules": [
+      {
+        "name": "GitGuardChangesV1",
+        "version": "1.0.0",
+        "changes": [
+          {
+            "description": "Added new version.",
+            "type": "feature"
+          }
+        ]
+      },
+      {
+        "name": "GitGuardChanges",
+        "version": "0.2.0",
+        "changes": [
+          {
+            "description": "Deprecated this version of the extension. Please use `GitGuardChangesV1`",
+            "type": "maint"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "publishDate": "2021-06-16",
+    "version": "0.1.2",
+    "modules": [
+      {
+        "name": "GitGuardChanges",
+        "version": "0.1.15",
+        "changes": [
+          {
+            "description": "Update dependencies",
+            "type": "maint"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "publishDate": "2021-01-11",
+    "version": "0.1.1",
+    "modules": [
+      {
+        "name": "GitGuardChanges",
+        "version": "0.1.14",
+        "changes": [
+          {
+            "description": "Update dependencies",
+            "type": "maint"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "publishDate": "2020-12-05",
+    "version": "0.1.0",
+    "modules": [
+      {
+        "name": "GitGuardChanges",
+        "version": "0.1.13",
+        "changes": [
+          {
+            "description": "Activated public preview",
+            "type": "feature"
+          }
+        ]
+      }
+    ]
+  }
+]
