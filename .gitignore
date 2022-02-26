@@ -1,0 +1,14 @@
+node_modules
+[Tt]asks/**/*.js
+[Tt]ests/**/*.js
+*.js
+!*.config.js
+build/
+dist/
+*.vsix
+*.log
+.taskkey
+ResultsFile.xml
+coverage
+.nyc*
+!ci/buildDocs.js
