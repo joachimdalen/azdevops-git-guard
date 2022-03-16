@@ -4,7 +4,8 @@
   "name": "GitGuardChanges",
   "friendlyName": "GitGuardChanges",
   "description": "Check if certain files have been changed between two commits",
-  "helpMarkDown": "[Learn more about this task](https://marketplace.visualstudio.com/items?itemName=joachimdalen.gitguard)",
+  "helpMarkDown": "[Learn more about this task](https://docs.devops-extensions.dev/docs/extensions/git-guard/tasks/git-guard-changes)",
+  "helpUrl": "https://docs.devops-extensions.dev/docs/extensions/git-guard/tasks/git-guard-changes",
   "category": "Utility",
   "author": "Joachim Dalen",
   "version": {

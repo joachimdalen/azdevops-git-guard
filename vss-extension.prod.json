@@ -31,6 +31,9 @@
     "changelog": { "path": "marketplace/docs/CHANGELOG.md" }
   },
   "links": {
+    "getstarted": {
+      "uri": "https://docs.devops-extensions.dev/docs/extensions/git-guard"
+    },
     "repository": {
       "uri": "https://github.com/joachimdalen/azdevops-git-guard"
     },
@@ -38,10 +41,10 @@
       "uri": "https://github.com/joachimdalen/azdevops-git-guard/issues"
     },
     "privacypolicy": {
-      "uri": "https://github.com/joachimdalen/azdevops-git-guard/blob/master/PRIVACY.md"
+      "uri": "https://docs.devops-extensions.dev/docs/privacy"
     },
     "license": {
-      "uri": "https://github.com/joachimdalen/azdevops-git-guard/blob/master/LICENSE"
+      "uri": "https://github.com/joachimdalen/azdevops-git-guard/blob/main/LICENSE"
     }
   },
   "repository": {

@@ -116,4 +116,4 @@ stages:
       - template: .ci/publish-extension.template.yml
         parameters:
           pipelineEnv: gitguard-prod-env
-          extensionVisibility: public_preview
+          extensionVisibility: public

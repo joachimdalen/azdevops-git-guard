@@ -23,7 +23,7 @@
     },
     {
       "name": "doc-site",
-      "imageFolder": "/img/env-transform/",
+      "imageFolder": "/img/git-guard/",
       "relative": false
     }
   ]
