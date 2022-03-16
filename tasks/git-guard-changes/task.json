@@ -18,20 +18,23 @@
       "name": "sourceCommitHash",
       "type": "string",
       "label": "Source Commit Hash",
-      "required": true
+      "required": true,
+      "helpMarkDown": "Oldest commit hash to check from"
     },
     {
       "name": "targetCommitHash",
       "type": "string",
       "label": "Target Commit Hash",
       "required": true,
-      "defaultValue": "HEAD"
+      "defaultValue": "HEAD",
+      "helpMarkDown": "Newest commit hash to check to  (Default `HEAD`)"
     },
     {
       "name": "matchPattern",
       "type": "string",
       "label": "Match Pattern",
-      "required": true
+      "required": true,
+      "helpMarkDown": "Files to match"
     },
     {
       "name": "matchStrategy",
@@ -42,7 +45,8 @@
       "options": {
         "all": "All",
         "single": "Single"
-      }
+      },
+      "helpMarkDown": "If single only a `single` result from `matchPattern` needs to be matched, else all. "
     },
     {
       "name": "breakOnFailure",

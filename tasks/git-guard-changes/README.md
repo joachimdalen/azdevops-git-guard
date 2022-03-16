@@ -11,23 +11,23 @@
 ```yaml
 - task: GitGuardChanges@0
   inputs:
-    sourceCommitHash:
-    targetCommitHash: HEAD
-    matchPattern:
-    matchStrategy: all
+    sourceCommitHash: #Oldest commit hash to check from
+    targetCommitHash: HEAD #Newest commit hash to check to  (Default `HEAD`)
+    matchPattern: #Files to match
+    matchStrategy: all #If single only a `single` result from `matchPattern` needs to be matched, else all.
     breakOnFailure: false #Break the build in addition to setting the result variables
 
 ```
 
 ### Arguments
 
-| Argument                                    | Description                                                                       |
-| :------------------------------------------ | :-------------------------------------------------------------------------------- |
-| `sourceCommitHash` <br />Source Commit Hash | **(Required)** <br />                                                             |
-| `targetCommitHash` <br />Target Commit Hash | **(Required)** <br /> Default value: `HEAD`                                       |
-| `matchPattern` <br />Match Pattern          | **(Required)** <br />                                                             |
-| `matchStrategy` <br />Match Strategy        | **(Required)** <br /> Options: `all`, `single` <br /> Default value: `all`        |
-| `breakOnFailure` <br />Break on failure     | **(Optional)** Break the build in addition to setting the result variables <br /> |
+| Argument                                    | Description                                                                                                                                                    |
+| :------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sourceCommitHash` <br />Source Commit Hash | **(Required)** Oldest commit hash to check from <br />                                                                                                         |
+| `targetCommitHash` <br />Target Commit Hash | **(Required)** Newest commit hash to check to (Default `HEAD`) <br /> Default value: `HEAD`                                                                    |
+| `matchPattern` <br />Match Pattern          | **(Required)** Files to match <br />                                                                                                                           |
+| `matchStrategy` <br />Match Strategy        | **(Required)** If single only a `single` result from `matchPattern` needs to be matched, else all. <br /> Options: `all`, `single` <br /> Default value: `all` |
+| `breakOnFailure` <br />Break on failure     | **(Optional)** Break the build in addition to setting the result variables <br />                                                                              |
 
 
 ### Output variables
