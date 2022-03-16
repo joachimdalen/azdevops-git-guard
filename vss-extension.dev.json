@@ -19,7 +19,7 @@
   },
   "files": [
     {
-      "path": "dist/git-guard-changes/",
+      "path": "tasks/git-guard-changes/dist/bundle",
       "packagePath": "/gitguard/git-guard-changes"
     }
   ],
