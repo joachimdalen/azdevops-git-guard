@@ -11,26 +11,22 @@ steps:
     displayName: 'Run tests'
     inputs:
       command: custom
-      customCommand: 'run test:coverage'
-  - task: Npm@1
-    displayName: 'Run integeration tests'
-    inputs:
-      command: custom
       customCommand: 'run test:integration:coverage'
-  - task: Bash@3
-    displayName: 'Move coverage files'
-    inputs:
-      targetType: 'inline'
-      script: |
-        cp -r $(Build.SourcesDirectory)/coverage $(Build.ArtifactStagingDirectory)
+  # - task: Bash@3
+  #   displayName: 'Move coverage files'
+  #   inputs:
+  #     targetType: 'inline'
+  #     script: |
+  #       cp -r $(Build.SourcesDirectory)/coverage $(Build.ArtifactStagingDirectory)
   - task: PublishTestResults@2
     displayName: 'Publish test results'
+    condition: always()
     inputs:
       testResultsFormat: 'JUnit'
       testResultsFiles: '**/**/ResultsFile*.xml'
-  - task: PublishCodeCoverageResults@1
-    displayName: 'Publish coverage'
-    inputs:
-      codeCoverageTool: 'Cobertura'
-      summaryFileLocation: '$(Build.ArtifactStagingDirectory)/coverage/cobertura-coverage.xml'
-      pathToSources: '$(Build.SourcesDirectory)/src'
+  # - task: PublishCodeCoverageResults@1
+  #   displayName: 'Publish coverage'
+  #   inputs:
+  #     codeCoverageTool: 'Cobertura'
+  #     summaryFileLocation: '$(Build.ArtifactStagingDirectory)/coverage/cobertura-coverage.xml'
+  #     pathToSources: '$(Build.SourcesDirectory)/src'

@@ -1,10 +1,27 @@
 {
   "partials": {
     "single-file": {
-      "file": "../src/git-guard-changes/docs/examples/single-file.yml"
+      "file": "../tasks/git-guard-changes/docs/examples/single-file.yml"
     },
     "all-files": {
-      "file": "../src/git-guard-changes/docs/examples/all-files.yml"
+      "file": "../tasks/git-guard-changes/docs/examples/all-files.yml"
     }
-  }
+  },
+  "profiles": [
+    {
+      "name": "github",
+      "imageFolder": "marketplace/docs/images",
+      "relative": true
+    },
+    {
+      "name": "marketplace",
+      "imageFolder": "marketplace/docs/images",
+      "relative": false
+    },
+    {
+      "name": "doc-site",
+      "imageFolder": "/img/env-transform/",
+      "relative": false
+    }
+  ]
 }

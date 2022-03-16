@@ -3,11 +3,18 @@ parameters:
     displayName: 'Task Version'
     type: string
     default: $(Task.Extension.Version)
+  - name: compileMode
+    displayName: 'Compile Mode'
+    type: string
+    default: dev
+    values:
+      - dev
+      - prod
 
 trigger:
   branches:
     include:
-      - master
+      - main
   paths:
     exclude:
       - .github/*
@@ -21,7 +28,7 @@ pool:
 
 variables:
   npm_config_cache: $(Pipeline.Workspace)/.npm
-  isMaster: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
   marketplaceServiceConnection: 'marketplace-joachim-dalen'
 
 stages:
@@ -30,16 +37,15 @@ stages:
     jobs:
       - job:
         steps:
-          - template: .ci/install.template.yml
-          - template: .ci/build.template.yml
+          - template: .ci/install-and-build.template.yml
             parameters:
-              extensionEnv: dev
+              compileMode: dev
           - template: .ci/run-tests.template.yml
 
   - stage: package_dev
     displayName: '[DEV] Package'
     dependsOn: 'run_tests'
-    condition: and(succeeded(), eq(variables.isMaster, false))
+    condition: and(succeeded(), eq(variables.isMain, false))
     variables:
       - group: 'mp-gitguard-dev'
     jobs:
@@ -50,13 +56,14 @@ stages:
           taskVersion: ${{ parameters.taskVersion }}
       - template: .ci/build-extension-artifact.template.yml
         parameters:
+          compileMode: ${{ parameters.compileMode }}
           extensionEnv: dev
           taskVersion: ${{ parameters.taskVersion }}
 
   - stage: publish_dev
     displayName: '[DEV] Publish'
     dependsOn: 'package_dev'
-    condition: and(succeeded(), eq(variables.isMaster, false))
+    condition: and(succeeded(), eq(variables.isMain, false))
     variables:
       - group: 'mp-gitguard-dev'
     jobs:
@@ -67,7 +74,7 @@ stages:
 
   - stage: verify_changelog
     dependsOn: 'run_tests'
-    condition: and(succeeded(), eq(variables.isMaster, true))
+    condition: and(succeeded(), eq(variables.isMain, true))
     displayName: 'Check changelog'
     jobs:
       - job:
@@ -85,7 +92,7 @@ stages:
   - stage: package_prod
     displayName: '[PROD] Package'
     dependsOn: 'verify_changelog'
-    condition: and(succeeded(), eq(variables.isMaster, true))
+    condition: and(succeeded(), eq(variables.isMain, true))
     variables:
       - group: 'mp-gitguard-prod'
     jobs:
@@ -95,13 +102,14 @@ stages:
           taskVersion: ${{ parameters.taskVersion }}
       - template: .ci/build-extension-artifact.template.yml
         parameters:
+          compileMode: prod
           extensionEnv: prod
           taskVersion: ${{ parameters.taskVersion }}
 
   - stage: publish_prod
     displayName: '[PROD] Publish'
     dependsOn: 'package_prod'
-    condition: and(succeeded(), eq(variables.isMaster, true))
+    condition: and(succeeded(), eq(variables.isMain, true))
     variables:
       - group: 'mp-gitguard-prod'
     jobs:

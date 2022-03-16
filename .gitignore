@@ -11,3 +11,4 @@ dist/
 ResultsFile*.xml
 coverage
 .nyc*
+docs/generated

@@ -1,26 +1,45 @@
-# GitGuardChanges@[x]
+# GitGuardChanges
 
 ---
 
-**Allows checking for changes in git files**
+**Check if certain files have been changed between two commits**
 
 ---
 
-# ⚙️ Options
+## YAML Snippet
 
-- `sourceCommitHash`: Oldest commit hash to check from (Default `HEAD`). Can also be resolved using [this](#commit-query).
-- `targetCommitHash`: Newest commit hash to check to. Can also be resolved using [this](#commit-query).
-- `matchPattern`: Files to match
-- `matchStrategy`: If `single` only a single result from `matchPattern` needs to be matched, else all. Accepts:
-  - `single`
-  - `all`
-- `breakOnFailure`: Break pipeline on failure (Default `false`).
+```yaml
+- task: GitGuardChanges@0
+  inputs:
+    sourceCommitHash:
+    targetCommitHash: HEAD
+    matchPattern:
+    matchStrategy: all
+    breakOnFailure: false #Break the build in addition to setting the result variables
 
-# 🔮 Outputs
+```
 
-- `gitGuardChangesResult`: Match result, `true` or `false`
-- `gitGuardChangesCount`: Count of number of matched files that was changed
-- `gitGuardChangesMatches`: List of file paths of files that was changed. This are separated with the respective `EOL` character. 
+### Arguments
+
+| Argument                                    | Description                                                                       |
+| :------------------------------------------ | :-------------------------------------------------------------------------------- |
+| `sourceCommitHash` <br />Source Commit Hash | **(Required)** <br />                                                             |
+| `targetCommitHash` <br />Target Commit Hash | **(Required)** <br /> Default value: `HEAD`                                       |
+| `matchPattern` <br />Match Pattern          | **(Required)** <br />                                                             |
+| `matchStrategy` <br />Match Strategy        | **(Required)** <br /> Options: `all`, `single` <br /> Default value: `all`        |
+| `breakOnFailure` <br />Break on failure     | **(Optional)** Break the build in addition to setting the result variables <br /> |
+
+
+### Output variables
+
+These are the output variables the task sets:
+
+| Name                   | Description                                       |
+| :--------------------- | :------------------------------------------------ |
+| gitGuardChangesResult  | Match result                                      |
+| gitGuardChangesCount   | Count of number of matched files that was changed |
+| gitGuardChangesMatches | List of file paths of files that was changed      |
+
 
 # 📜 Commit Query
 
@@ -28,7 +47,7 @@
 
 - `tag:<matchFormat>`: Fetches the latest tag matching the format
 
-## Example
+### Examples
 
 Assume the repo contains two tags, `v0.0.7-dev`, `v0.0.8-dev`, and `v0.0.9` the following `tag:v*-dev` expression would resolve to the latest tag created. In this case `v0.0.8-dev`. The query `tag:v*[!-dev]` would resolve `v0.0.9`.
 
@@ -44,7 +63,7 @@ Assume the latest tag created is `v0.0.7-dev` and in the commits made after the 
 
 Given the following pipeline configuration:
 
-```yml
+```yaml
 steps:
   - task: GitGuardChanges@0
     displayName: 'Verify changelog'
@@ -54,6 +73,7 @@ steps:
       matchPattern: 'docs/CHANGELOG.md'
       matchStrategy: 'single'
       breakOnFailure: true
+
 ```
 
 assume `matchPattern` will resolve the following files:
@@ -79,7 +99,7 @@ Assume the latest tag created is `v0.0.7-dev` and in the commits made after the 
 
 Given the following pipeline configuration:
 
-```yml
+```yaml
 steps:
   - task: GitGuardChanges@0
     displayName: 'Verify changelog'
@@ -89,6 +109,7 @@ steps:
       matchPattern: '**/*/index2.js'
       matchStrategy: 'all'
       breakOnFailure: true
+
 ```
 
 assume `matchPattern` will resolve the following files:

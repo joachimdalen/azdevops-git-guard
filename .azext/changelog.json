@@ -4,22 +4,16 @@
     "version": "1.0.0",
     "modules": [
       {
-        "name": "GitGuardChangesV1",
-        "version": "1.0.0",
-        "changes": [
-          {
-            "description": "Added new version.",
-            "type": "feature"
-          }
-        ]
-      },
-      {
         "name": "GitGuardChanges",
         "version": "0.2.0",
         "changes": [
           {
-            "description": "Deprecated this version of the extension. Please use `GitGuardChangesV1`",
+            "description": "Update dependencies",
             "type": "maint"
+          },
+          {
+            "description": "Update docs",
+            "type": "docs"
           }
         ]
       }
