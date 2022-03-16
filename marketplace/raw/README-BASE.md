@@ -8,7 +8,7 @@
   <p align="center">
     GitGuard is an extension that contains a various set of tasks that can be used to verify certain git related contitions in pipelines
     <br />
-    <a href="https://github.com/joachimdalen/azdevops-git-guard"><strong>Explore the docs »</strong></a>
+    <a href="https://docs.devops-extensions.dev/docs/extensions/gitguard"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://marketplace.visualstudio.com/items?itemName=joachimdalen.gitguard">View Extension</a>
