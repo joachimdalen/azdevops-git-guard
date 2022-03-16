@@ -1,5 +1,8 @@
 {
   "partials": {
+    "git-guard-changes": {
+      "file": "../tasks/git-guard-changes/docs/README.md"
+    },
     "single-file": {
       "file": "../tasks/git-guard-changes/docs/examples/single-file.yml"
     },
