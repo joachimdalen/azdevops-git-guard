@@ -1,0 +1,30 @@
+{
+  "partials": {
+    "git-guard-changes": {
+      "file": "../tasks/git-guard-changes/docs/README.md"
+    },
+    "single-file": {
+      "file": "../tasks/git-guard-changes/docs/examples/single-file.yml"
+    },
+    "all-files": {
+      "file": "../tasks/git-guard-changes/docs/examples/all-files.yml"
+    }
+  },
+  "profiles": [
+    {
+      "name": "github",
+      "imageFolder": "marketplace/docs/images",
+      "relative": true
+    },
+    {
+      "name": "marketplace",
+      "imageFolder": "marketplace/docs/images",
+      "relative": false
+    },
+    {
+      "name": "doc-site",
+      "imageFolder": "/img/git-guard/",
+      "relative": false
+    }
+  ]
+}

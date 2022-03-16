@@ -39,7 +39,7 @@
 <div align="center">
   <img
     alt="Azure DevOps builds"
-    src="https://img.shields.io/azure-devops/build/dalenapps/6531387f-baea-443c-a284-0d0e786e56c3/43?color=0078d7&label=Master%20Build&logo=azure-devops&style=flat-square"
+    src="https://img.shields.io/azure-devops/build/dalenapps/6531387f-baea-443c-a284-0d0e786e56c3/47?color=0078d7&label=main%20Build&logo=azure-devops&style=flat-square"
   />
   <img
     alt="Issues"

@@ -8,7 +8,7 @@ dist/
 *.vsix
 *.log
 .taskkey
-ResultsFile.xml
+ResultsFile*.xml
 coverage
 .nyc*
-!ci/buildDocs.js
+docs/generated

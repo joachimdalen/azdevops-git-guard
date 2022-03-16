@@ -1,0 +1,70 @@
+[
+  {
+    "publishDate": "2022-03-16",
+    "version": "1.0.0",
+    "modules": [
+      {
+        "name": "GitGuardChanges",
+        "version": "0.2.0",
+        "changes": [
+          {
+            "description": "Update dependencies",
+            "type": "maint"
+          },
+          {
+            "description": "Update docs",
+            "type": "docs"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "publishDate": "2021-06-16",
+    "version": "0.1.2",
+    "modules": [
+      {
+        "name": "GitGuardChanges",
+        "version": "0.1.15",
+        "changes": [
+          {
+            "description": "Update dependencies",
+            "type": "maint"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "publishDate": "2021-01-11",
+    "version": "0.1.1",
+    "modules": [
+      {
+        "name": "GitGuardChanges",
+        "version": "0.1.14",
+        "changes": [
+          {
+            "description": "Update dependencies",
+            "type": "maint"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "publishDate": "2020-12-05",
+    "version": "0.1.0",
+    "modules": [
+      {
+        "name": "GitGuardChanges",
+        "version": "0.1.13",
+        "changes": [
+          {
+            "description": "Activated public preview",
+            "type": "feature"
+          }
+        ]
+      }
+    ]
+  }
+]

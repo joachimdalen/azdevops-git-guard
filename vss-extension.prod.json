@@ -1,0 +1,64 @@
+{
+  "manifestVersion": 1,
+  "id": "gitguard",
+  "name": "GitGuard",
+  "version": "0.1.1",
+  "publisher": "JoachimDalen",
+  "public": true,
+  "tags": [],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services.Cloud"
+    }
+  ],
+  "description": "GitGuard is an extension that contains a various set of tasks that can be used to verify certain git related contitions in pipelines",
+  "categories": ["Azure Pipelines"],
+  "branding": {
+    "color": "#AE5400",
+    "theme": "dark"
+  },
+  "files": [
+    {
+      "path": "tasks/git-guard-changes/dist/bundle",
+      "packagePath": "/gitguard/git-guard-changes"
+    }
+  ],
+  "icons": {
+    "default": "extension-icon.png"
+  },
+  "content": {
+    "details": { "path": "marketplace/docs/README.md" },
+    "changelog": { "path": "marketplace/docs/CHANGELOG.md" }
+  },
+  "links": {
+    "getstarted": {
+      "uri": "https://docs.devops-extensions.dev/docs/extensions/git-guard"
+    },
+    "repository": {
+      "uri": "https://github.com/joachimdalen/azdevops-git-guard"
+    },
+    "support": {
+      "uri": "https://github.com/joachimdalen/azdevops-git-guard/issues"
+    },
+    "privacypolicy": {
+      "uri": "https://docs.devops-extensions.dev/docs/privacy"
+    },
+    "license": {
+      "uri": "https://github.com/joachimdalen/azdevops-git-guard/blob/main/LICENSE"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/joachimdalen/azdevops-git-guard"
+  },
+  "contributions": [
+    {
+      "id": "2061c25a-2dbc-4c3a-870d-c480d9ce24f3",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "gitguard/git-guard-changes"
+      }
+    }
+  ]
+}
